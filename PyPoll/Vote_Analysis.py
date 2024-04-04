@@ -9,23 +9,14 @@ os.chdir(os.path.dirname(os.path.abspath(__file__)))
 os.chdir("Resources")
 csv_path = str(os.getcwd()) + "\\election_data.csv"
 
-# List to capture the header
-header = []
-
 # Dictionary for unique entries
 votes_dict = {}
-
-# List to capture voting data
-votes = []
 
 # Use to count the number of votes or csv entries
 row_count = 0
 
 # Use to get a list of candidates
 candidate = {}
-
-# Store the winner's name
-winner = ""
 #---------------------------------------------------------        
 
 
@@ -78,7 +69,7 @@ with open(csv_path) as csvfile:
 
     csvreader = csv.reader(csvfile, delimiter=",")
     # Grab the first row as a header row
-    header = next(csvreader)
+    next(csvreader)
 
     for row in csvreader:
         row_count += 1
