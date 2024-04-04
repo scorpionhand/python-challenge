@@ -92,6 +92,7 @@ with open(csv_path) as csvfile:
             candidate[votes_dict['Candidate']] = 1
 #---------------------------------------------------------        
 
+
 # results to terminal
 print(output_results())
 #---------------------------------------------------------        
