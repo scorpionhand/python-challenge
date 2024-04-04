@@ -29,7 +29,9 @@ winner = ""
 #---------------------------------------------------------        
 
 
-# function to calculate the election results
+# function to calculate and return the formatted election results
+# would have been easier and faster to copy paste the code twice
+# this was done an exploration of using functions in python 
 def output_results():
    
     # results saved in return_str
@@ -55,7 +57,6 @@ def output_results():
         cand_name = list(candidate)[i]
         
         # output vote percent and vote count
-        tst = candidate[cand_name]
         return_str = return_str + cand_name + ": " + str(format(vote_percent, ".3%")) + " (" + str(candidate[cand_name]) + ") \n"
         
         if candidate[cand_name] > largest_count:
@@ -102,6 +103,5 @@ print(output_results())
 os.chdir("..\\analysis")
 result_file = str(os.getcwd()) + "\\poll_results.txt"
 with open(result_file, 'w') as write_file:
-    v = output_results()
     write_file.writelines(output_results())
 #---------------------------------------------------------        
